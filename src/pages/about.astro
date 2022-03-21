@@ -1,0 +1,15 @@
+---
+// src/pages/index.astro
+import BaseHead from '../layouts/BaseHead.astro';
+---
+<html>
+  <head>
+    <!-- Now, you have complete control over the head, per-page. -->
+    <BaseHead title="Page Title" description="Page Description" />
+    <!-- You can even add custom, one-off elements as needed. -->
+    <link rel="alternate" type="application/rss+xml" href="/feed/posts.xml">
+  </head>
+  <body>
+    <h1>Page About Title</h1>
+  </body>
+</html>

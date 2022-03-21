@@ -1,0 +1,11 @@
+---
+// Import your components in your component script...
+import NamedSlote from '../components/NamedSlote.astro';
+import FooterComponent from '../components/FooterComponent.astro';
+---
+
+<NamedSlote>
+  <h1 slot="header">This is the Header</h1>
+  <p>Some text for the paragraph ...</p>
+  <FooterComponent slot="footer" />
+</NamedSlote>

@@ -1,0 +1,13 @@
+---
+// src/layouts/PostLayout.astro
+import BaseLayout from './BaseLayout.astro'
+const { content } = Astro.props;
+---
+
+  <!-- This layout reuses BaseLayout (see example above): -->
+<BaseLayout title={title}>
+  <!-- Adds new post-specific content to every page. -->
+  <div>Post author: {author}</div>
+  <!-- slot: your page content will be injected here. -->
+  <slot />
+</BaseLayout>

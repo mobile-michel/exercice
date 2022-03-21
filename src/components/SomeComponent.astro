@@ -1,0 +1,28 @@
+---
+const name = "Michel";
+const items = ["Dog", "Cat", "Platipus"];
+// Example: <SomeComponent greeting="(Optional) Hello" name="Required Name" />
+const { greeting = 'Hello' } = Astro.props;
+---
+    <h1>Dynamic Values</h1>
+<div>
+  <p>Hello {name}!</p>
+</div>
+
+<h1>Dynamic Attributes</h1>
+<div>
+  <div data-name={name}>Attribute expressions supported</div>
+  <div data-hint={`Use JS template strings to mix ${"variables"}.`}>So good!</div>
+</div>
+
+<h1>Dynamic HTML</h1>
+<ul>
+  {items.map((item) => (
+    <li>{item}</li>
+  ))}
+</ul>
+
+<h1>Component Props</h1>
+<div>
+    <p>{greeting}, {name}!</p>
+</div>

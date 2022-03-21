@@ -1,0 +1,42 @@
+---
+const { content } = Astro.props;
+const items = ["fallback", "fragments", "named-slote"];
+---
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>{content.title}</title>
+    <meta name="description" content={content.description}>
+    <link rel="stylesheet" href={Astro.resolve("../styles/global.css")}>
+  </head>
+  <body>
+    <div id="wrapper">
+      <header>
+        <h1>Company Name</h1>
+      </header>
+      <nav>
+        <a href="./">Home</a>
+        <a href="./shop">Shop</a>
+        <a href="./post">Posts</a>
+        <a href="./about">About</a>
+      </nav>
+      <main>
+        <slot />
+      </main>
+      <footer>
+        {items.map((item) => (
+        <a href={item}>{item}</a>
+        ))}
+      </footer>
+    </div>
+  </body>
+</html>
+
+<style>
+  #wrapper {
+    @apply container mx-auto border-2 p-4
+  }
+  footer a, nav a {
+    @apply p-3
+  }
+</style>

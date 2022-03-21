@@ -1,0 +1,47 @@
+---
+// src/pages/index.astro
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Markdown } from 'astro/components';
+const {title, description} = Astro.props;
+---
+
+<BaseLayout title="Homepage">
+    <p>This is some content for the homepage</p>
+    <section>
+      <Markdown>
+      ## Layout Structure
+    ┌──────────────────────
+    │ layouts/BaseLayout.astro
+    │ ┌────────────────────
+	│ │ components/BaseHead.astro
+	│ └────────────────────
+	│ ┌────────────────────
+	│ │ components/BaseBody.astro
+	│ │ ┌──────────────────
+	│ │ │ components/MainHeader.astro
+	│ │ │ ┌────────────────
+	│ │ │ │ components/Nav.astro
+	│ │ │ └────────────────
+	│ │ └──────────────────
+	│ │ ┌──────────────────
+	│ │ │ pages/index.astro
+	│ │ │ (slot)
+	│ │ │
+	│ │ │
+	│ │ │
+	│ │ └──────────────────
+    │ │ ┌──────────────────
+	│ │ │ components/MainFooter.astro
+	│ │ └──────────────────
+    │ └────────────────────
+    └──────────────────────
+      </Markdown>
+    </section>
+</BaseLayout>
+
+
+<style>
+    nav {
+        @apply w-full justify-center text-center text-3xl font-sans text-purple-600 py-10
+    }
+</style>

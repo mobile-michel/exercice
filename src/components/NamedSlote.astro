@@ -1,0 +1,19 @@
+<div id="my-component">
+  <header>
+    <!-- children with the `slot="header"` attribute will go here -->
+    <slot name="header" />
+  </header>
+  <main>
+    <!-- children without a `slot` (or with the `slot="default"`) attribute will go here -->
+    <slot />
+  </main>
+  <footer>
+    <!-- children with the `slot="footer"` attribute will go here -->
+    <slot name="footer" />
+  </footer>
+</div>
+<style>
+    header {
+        @apply w-full justify-center text-center text-3xl font-sans text-purple-600 py-10
+    }
+</style>
